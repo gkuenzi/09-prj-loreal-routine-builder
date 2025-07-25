@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
+  <body dir="ltr">
+    <!-- Change to dir="rtl" for RTL layout -->
     <div class="page-wrapper">
       <!------- Header / Branding ------->
       <header class="site-header">
@@ -57,10 +58,10 @@
         <div id="chatWindow" class="chat-window"></div>
 
         <form id="chatForm" class="chat-form">
-          <label for="userInput" class="visually-hidden">Message</label>
+          <label for="chatInput" class="visually-hidden">Message</label>
           <input
-            id="userInput"
-            name="userInput"
+            id="chatInput"
+            name="chatInput"
             type="text"
             placeholder="Ask me about products or routines…"
             autocomplete="off"

@@ -75,10 +75,35 @@ body {
   padding: 20px;
   font-size: 18px;
   line-height: 1.5;
-  height: 250px;
+  height: 312px; /* increased from 250px to 312px (25% more) */
   overflow-y: auto;
   background: #fafafa;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  margin: 8px 0;
+  padding: 10px 16px;
+  border-radius: 18px;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.chat-bubble.user {
+  background: #d1cabe;
+  border: 2px solid #e3a535;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.chat-bubble.bot {
+  background: #ffcad5;
+  border: 2px solid #ff003b;
+  align-self: flex-start;
+  text-align: left;
 }
 
 /* placeholder message */
@@ -243,6 +268,7 @@ body {
 /* Green border for selected product cards */
 .product-card.selected {
   border: 2px solid green;
+  background-color: rgb(163, 216, 163);
 }
 
 /* selected products */
@@ -284,4 +310,100 @@ body {
 
 .generate-btn i {
   margin-right: 8px;
+}
+
+#clearSelectedBtn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  background: #e7d0a6;
+  border: 2px solid #e3a535;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#clearSelectedBtn:hover {
+  background: #e3a535;
+}
+
+/* product tooltip */
+.product-tooltip {
+  position: absolute;
+  z-index: 1000;
+  max-width: 550px;
+  background: rgba(217, 201, 171, 0.95);
+  color: #333;
+  border: 2px solid #e3a535;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 13px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  transition: opacity 0.2s;
+  opacity: 0.97;
+  line-height: 1.5;
+}
+
+/* RTL support */
+body[dir="rtl"] {
+  direction: rtl;
+}
+
+body[dir="rtl"] .products-grid {
+  flex-direction: row-reverse;
+}
+
+body[dir="rtl"] .product-card {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+body[dir="rtl"] .product-card .product-info {
+  align-items: flex-end;
+}
+
+body[dir="rtl"] .selected-products {
+  text-align: right;
+}
+
+body[dir="rtl"] #selectedProductsList {
+  flex-direction: row-reverse;
+}
+
+body[dir="rtl"] .chatbox {
+  text-align: right;
+}
+
+body[dir="rtl"] .chat-window {
+  direction: rtl;
+}
+
+body[dir="rtl"] .chat-bubble.user {
+  align-self: flex-start;
+  text-align: left;
+  border-right: 2px solid #e3a535;
+  border-left: none;
+}
+
+body[dir="rtl"] .chat-bubble.bot {
+  align-self: flex-end;
+  text-align: right;
+  border-left: 2px solid #ff003b;
+  border-right: none;
+}
+
+body[dir="rtl"] .chat-form {
+  flex-direction: row-reverse;
+}
+
+body[dir="rtl"] .chat-form input {
+  text-align: right;
+}
+
+body[dir="rtl"] .product-tooltip {
+  text-align: right;
 }
