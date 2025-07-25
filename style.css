@@ -135,6 +135,33 @@ body {
   outline-offset: 2px;
 }
 
+/* Remove button style for selected products */
+.remove-btn {
+  color: #ff003b;
+  border: 2px solid #ff003b;
+  background: transparent;
+  padding: 0 8px; /* minimal vertical padding */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px; /* slightly smaller font */
+  font-weight: bold;
+  line-height: 1; /* minimal line height */
+  height: 30%; /* make button half the height of its parent */
+  align-self: center; /* vertically center the button in the flex container */
+  box-sizing: border-box;
+  display: inline-block; /* prevent flex stretching */
+  margin: 0; /* remove any default margin */
+  vertical-align: middle; /* align with text */
+  transition: background 0.2s, color 0.2s;
+}
+
+.remove-btn:hover,
+.remove-btn:focus {
+  background: #ff003b;
+  color: #fff;
+  outline: none;
+}
+
 /* visually hidden */
 .visually-hidden {
   position: absolute;
@@ -211,6 +238,11 @@ body {
 .product-card p {
   font-size: 14px;
   color: #666;
+}
+
+/* Green border for selected product cards */
+.product-card.selected {
+  border: 2px solid green;
 }
 
 /* selected products */
